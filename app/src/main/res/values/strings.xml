@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ActionBarNotes</string>
+    <string name="add_note">Add note</string>
+    <string name="title">Title</string>
+
+    <string name="channel_low_name">Low importance chanel</string>
+    <string name="channel_low_description">Chanel for notification with low importance</string>
+
+    <string name="channel_def_name">Default importance chanel</string>
+    <string name="channel_def_description">Chanel for notification with Default importance</string>
+
+    <string name="channel_high_name">High importance chanel</string>
+    <string name="channel_high_description">Chanel for notification with High importance</string>
+
+    <string name="chanel">Chanel</string>
+</resources>
