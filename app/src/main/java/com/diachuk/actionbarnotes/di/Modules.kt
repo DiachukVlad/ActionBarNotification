@@ -20,7 +20,7 @@ import org.koin.dsl.module
 val appModule = module {
 
     viewModel { MainViewModel(androidApplication(), get(), get()) }
-    viewModel { AddViewModel(androidApplication(), get<NoteDatabase>().noteDao()) }
+    viewModel { AddViewModel(androidApplication(), get()) }
 
     single { androidApplication() as NotesApp }
     single<SharedPreferences> {
@@ -38,12 +38,15 @@ val appModule = module {
 }
 
 val dataModule = module {
-    factory {
+    single {
         Room.databaseBuilder(
             androidContext(),
             NoteDatabase::class.java,
             "note_database"
-        ).build().noteDao()
+        ).build()
+    }
+    factory {
+        get<NoteDatabase>().noteDao()
     }
     factory { NoteRepository(get()) }
 }

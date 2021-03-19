@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.diachuk.actionbarnotes.data.dao.NoteDao
 import com.diachuk.actionbarnotes.data.entities.Note
+import com.diachuk.actionbarnotes.data.entities.dto.Importance
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
 import com.diachuk.actionbarnotes.data.repositories.NoteRepository
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +17,8 @@ import kotlinx.coroutines.launch
 class AddViewModel(application: Application, private val repo: NoteRepository): AndroidViewModel(application) {
     private val notes: LiveData<List<NoteDTO>> = repo.getNotes()
     val title = MutableLiveData<String>()
+    val content = MutableLiveData<String>()
+    val importance = MutableLiveData<Importance>()
     private var note: NoteDTO? = null
 
     fun setId(id: Int) {

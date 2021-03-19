@@ -1,5 +1,6 @@
 package com.diachuk.actionbarnotes.helpers
 
+import android.view.View
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.MutableLiveData

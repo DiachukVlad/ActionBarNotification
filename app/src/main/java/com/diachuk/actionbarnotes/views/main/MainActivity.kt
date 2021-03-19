@@ -3,32 +3,31 @@ package com.diachuk.actionbarnotes.views.main
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diachuk.actionbarnotes.R
+import com.diachuk.actionbarnotes.data.dao.NoteDao
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
+import com.diachuk.actionbarnotes.databinding.ActivityMainBinding
 import com.diachuk.actionbarnotes.helpers.Constants.EDIT_ID_EXTRA
 import com.diachuk.actionbarnotes.services.NoteService
 import com.diachuk.actionbarnotes.views.add.AddActivity
+import com.diachuk.actionbarnotes.views.base.BaseActivity
 import com.diachuk.actionbarnotes.views.main.components.NotesAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.get
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class MainActivity : AppCompatActivity() {
-
-    private val sharedPreferences: SharedPreferences = get()
+class MainActivity : BaseActivity() {
 
     private val vm: MainViewModel by viewModel()
     private val notesAdapter by lazy { get<NotesAdapter>() }
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        notes_view.adapter = notesAdapter
-        notes_view.layoutManager = LinearLayoutManager(this)
 
         notesAdapter.onEditClick = ::onEditClick
         notesAdapter.onDeleteClick = ::onDeleteClick
@@ -37,13 +36,17 @@ class MainActivity : AppCompatActivity() {
             updateNotes(it)
         }
 
-        add_btn.setOnClickListener {
-            startAddActivity()
-        }
-
         startService(Intent(this, NoteService::class.java))
 
         vm.onCreate()
+    }
+
+    override fun provideBinding(): View {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        return binding.apply {
+            addBtn.setOnClickListener { startAddActivity() }
+            notesView.adapter = notesAdapter
+        }.root
     }
 
     private fun startAddActivity() {

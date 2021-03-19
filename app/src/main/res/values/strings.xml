@@ -2,6 +2,10 @@
     <string name="app_name">ActionBarNotes</string>
     <string name="add_note">Add note</string>
     <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="low">Low</string>
+    <string name="def">Def</string>
+    <string name="high">High</string>
 
     <string name="channel_low_name">Low importance chanel</string>
     <string name="channel_low_description">Chanel for notification with low importance</string>

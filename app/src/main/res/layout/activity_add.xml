@@ -6,17 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".views.add.AddActivity">
 
-    <EditText
-        android:id="@+id/title_edit_text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
-        android:inputType="text"
-        android:autofillHints="@string/title"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:inputType="text"
+            android:autofillHints="@string/title"/>
+
+        <EditText
+            android:id="@+id/content_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:inputType="text"
+            android:autofillHints="@string/content"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/low_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low"/>
+            <RadioButton android:id="@+id/def_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/def"/>
+            <RadioButton android:id="@+id/high_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high"/>
+        </RadioGroup>
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/done_btn"
