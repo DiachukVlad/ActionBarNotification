@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.diachuk.actionbarnotes.R
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
 import com.diachuk.actionbarnotes.databinding.NoteLayoutBinding
 
@@ -13,8 +14,8 @@ class NotesAdapter(var notes: List<NoteDTO>) : RecyclerView.Adapter<NotesAdapter
     var onDeleteClick: ((id: Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, pos: Int): NoteViewHolder {
-        val binding = NoteLayoutBinding.inflate(LayoutInflater.from(parent.context))
-        val view = binding.root
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.note_layout, parent, false)
+        val binding = NoteLayoutBinding.bind(view)
         return NoteViewHolder(
             binding,
             view,

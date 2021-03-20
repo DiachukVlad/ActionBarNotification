@@ -51,6 +51,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/high"/>
         </RadioGroup>
+
+        <View
+            android:id="@+id/color"
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:background="@color/black"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_whatshot"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

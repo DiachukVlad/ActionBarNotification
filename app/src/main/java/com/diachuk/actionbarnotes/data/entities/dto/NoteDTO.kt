@@ -15,7 +15,7 @@ data class NoteDTO(
     var id: Int = 0
 
     fun toNote(): Note {
-        return Note(title, content, color, importance.toString(), image, small)
+        return Note(title, content, color, importance.toString(), image, small).also { it.id = id }
     }
 }
 
