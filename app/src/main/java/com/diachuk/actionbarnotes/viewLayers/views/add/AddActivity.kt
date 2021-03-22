@@ -1,4 +1,4 @@
-package com.diachuk.actionbarnotes.views.add
+package com.diachuk.actionbarnotes.viewLayers.views.add
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import com.diachuk.actionbarnotes.data.entities.dto.LowImportance
 import com.diachuk.actionbarnotes.databinding.ActivityAddBinding
 import com.diachuk.actionbarnotes.helpers.Constants.EDIT_ID_EXTRA
 import com.diachuk.actionbarnotes.helpers.connectToLiveData
-import com.diachuk.actionbarnotes.views.base.BaseActivity
+import com.diachuk.actionbarnotes.viewLayers.views.base.BaseActivity
 import com.flask.colorpicker.ColorPickerView
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder
 import org.koin.android.viewmodel.ext.android.viewModel

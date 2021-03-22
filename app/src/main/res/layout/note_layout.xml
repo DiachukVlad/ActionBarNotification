@@ -1,37 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
-    android:elevation="2dp"
-    android:background="@color/blue_gray">
+    android:background="@drawable/note_background"
+    app:layoutDescription="@xml/note_layout_scene">
 
-    <TextView
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/note_icon_background"
+        android:padding="4dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <com.diachuk.actionbarnotes.viewLayers.components.DisablingEditText
         android:id="@+id/note_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:layout_marginVertical="8dp"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Title" />
+
+    <com.diachuk.actionbarnotes.viewLayers.components.DisablingEditText
+        android:id="@+id/note_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toStartOf="@id/note_title"
+        app:layout_constraintTop_toBottomOf="@id/note_title"
+        tools:text="ContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContent" />
 
     <ImageView
-        android:id="@+id/note_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:id="@+id/edit_color"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:src="@drawable/ic_edit"
-        android:layout_marginHorizontal="8dp"
-        app:tint="@color/white" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note_content"
+        android:visibility="visible"/>
 
     <ImageView
-        android:id="@+id/note_remove"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:id="@+id/remove"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:src="@drawable/ic_delete"
-        android:layout_marginHorizontal="8dp"
-        app:tint="@color/white"/>
-</LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/done"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"/>
+
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"/>
+</androidx.constraintlayout.motion.widget.MotionLayout>

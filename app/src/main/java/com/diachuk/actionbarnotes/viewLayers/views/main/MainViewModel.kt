@@ -1,4 +1,4 @@
-package com.diachuk.actionbarnotes.views.main
+package com.diachuk.actionbarnotes.viewLayers.views.main
 
 import android.app.Application
 import android.app.NotificationManager

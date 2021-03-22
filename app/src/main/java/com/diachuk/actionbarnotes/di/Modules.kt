@@ -4,14 +4,13 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
 import com.diachuk.actionbarnotes.NotesApp
-import com.diachuk.actionbarnotes.data.dao.NoteDao
 import com.diachuk.actionbarnotes.data.databases.NoteDatabase
 import com.diachuk.actionbarnotes.data.repositories.NoteRepository
 import com.diachuk.actionbarnotes.helpers.NotifChanelsCreator
 import com.diachuk.actionbarnotes.helpers.Preferences
-import com.diachuk.actionbarnotes.views.add.AddViewModel
-import com.diachuk.actionbarnotes.views.main.MainViewModel
-import com.diachuk.actionbarnotes.views.main.components.NotesAdapter
+import com.diachuk.actionbarnotes.viewLayers.views.add.AddViewModel
+import com.diachuk.actionbarnotes.viewLayers.views.main.MainViewModel
+import com.diachuk.actionbarnotes.viewLayers.views.main.components.NotesAdapter
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel

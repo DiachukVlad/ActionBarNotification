@@ -1,7 +1,6 @@
-package com.diachuk.actionbarnotes.views.base
+package com.diachuk.actionbarnotes.viewLayers.views.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 

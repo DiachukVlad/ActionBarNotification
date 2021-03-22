@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue_gray">#6389A6</color>
+
+    <color name="gray">#d4d4d4</color>
+    <color name="dark_gray">#252222</color>
+
+<!--  text  -->
+    <color name="text_primary">#000</color>
+    <color name="text_secondary">#323232</color>
+
 </resources>

@@ -1,20 +1,15 @@
-package com.diachuk.actionbarnotes.views.main
+package com.diachuk.actionbarnotes.viewLayers.views.main
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.diachuk.actionbarnotes.R
-import com.diachuk.actionbarnotes.data.dao.NoteDao
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
 import com.diachuk.actionbarnotes.databinding.ActivityMainBinding
 import com.diachuk.actionbarnotes.helpers.Constants.EDIT_ID_EXTRA
 import com.diachuk.actionbarnotes.services.NoteService
-import com.diachuk.actionbarnotes.views.add.AddActivity
-import com.diachuk.actionbarnotes.views.base.BaseActivity
-import com.diachuk.actionbarnotes.views.main.components.NotesAdapter
+import com.diachuk.actionbarnotes.viewLayers.views.add.AddActivity
+import com.diachuk.actionbarnotes.viewLayers.views.base.BaseActivity
+import com.diachuk.actionbarnotes.viewLayers.views.main.components.NotesAdapter
 import org.koin.android.ext.android.get
 import org.koin.android.viewmodel.ext.android.viewModel
 

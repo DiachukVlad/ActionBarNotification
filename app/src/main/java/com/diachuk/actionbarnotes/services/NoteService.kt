@@ -12,7 +12,6 @@ import android.os.IBinder
 import com.diachuk.actionbarnotes.R
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
 import com.diachuk.actionbarnotes.data.repositories.NoteRepository
-import com.diachuk.actionbarnotes.views.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.diachuk.actionbarnotes.views.add
+package com.diachuk.actionbarnotes.viewLayers.views.add
 
 import android.app.Application
 import android.graphics.Color
@@ -6,8 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.diachuk.actionbarnotes.data.dao.NoteDao
-import com.diachuk.actionbarnotes.data.entities.Note
 import com.diachuk.actionbarnotes.data.entities.dto.DefaultImportance
 import com.diachuk.actionbarnotes.data.entities.dto.Importance
 import com.diachuk.actionbarnotes.data.entities.dto.NoteDTO
